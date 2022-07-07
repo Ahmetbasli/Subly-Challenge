@@ -3,14 +3,16 @@ import MediaList from './components/Media/MediaList'
 
 //styles
 import CssBaseline from '@mui/material/CssBaseline'
-import Header from './components/Header/Header'
+
+import Layout from './components/Layout/Layout'
 
 const App: React.FC = () => {
   return (
     <>
       <CssBaseline />
-      <Header />
-      <MediaList />
+      <Layout>
+        <MediaList />
+      </Layout>
     </>
   )
 }
