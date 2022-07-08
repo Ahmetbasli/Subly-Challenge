@@ -21,13 +21,13 @@ interface Props {
 }
 
 const useStyles = makeStyles({
-  cardMedia: {
+  card: {
     position: 'relative',
     zIndex: '1',
   },
   languageChip: {
     position: 'absolute',
-    top: '18%',
+    top: '10%',
     zIndex: '2',
     marginLeft: '10px',
   },
@@ -63,7 +63,11 @@ const ReadyCard: React.FC<Props> = ({ medium }) => {
 
   return (
     <>
-      <Card onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <Card
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        className={classes.card}
+      >
         {/* Language chip placed on a card image */}
         <Grid
           container
@@ -96,7 +100,6 @@ const ReadyCard: React.FC<Props> = ({ medium }) => {
             height="150"
             image={medium.cover}
             alt={medium.name}
-            className={classes.cardMedia}
           />
         ) : (
           <Box sx={{ position: 'relative', height: '150px' }}>
