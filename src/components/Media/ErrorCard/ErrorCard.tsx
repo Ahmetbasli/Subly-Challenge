@@ -1,5 +1,5 @@
 import React from 'react'
-import { Media } from '../../types/types'
+import { Media } from '../../../types/types'
 
 //style
 import { Box, Button, Card, CardContent, Typography } from '@mui/material'
@@ -31,6 +31,7 @@ const ErrorCard: React.FC<Props> = ({ medium }) => {
   return (
     <Card sx={{ p: 0, '&:last-child': { pb: 0 } }}>
       <CardContent>
+        {/* Card's main error message and buttons */}
         <Box className={classes.mainSection}>
           <Box className={classes.errorMessage}>
             <Box>
@@ -58,7 +59,7 @@ const ErrorCard: React.FC<Props> = ({ medium }) => {
             </Button>
           </Box>
         </Box>
-
+        {/* Card's information */}
         <Typography gutterBottom variant="h6" component="div">
           {medium.name}
         </Typography>
