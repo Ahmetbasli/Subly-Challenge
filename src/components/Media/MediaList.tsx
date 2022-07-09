@@ -120,8 +120,12 @@ const MediaList: React.FC = () => {
         {/* Filters */}
         <Box className={classes.filters}>
           <FormControl variant="standard" sx={{ width: '20%', mr: '10px' }}>
-            <InputLabel>Status</InputLabel>
-            <Select onChange={handleStatusSelector} value={selectedStatus}>
+            <InputLabel id="status-filter">Status</InputLabel>
+            <Select
+              labelId="status-filter"
+              onChange={handleStatusSelector}
+              value={selectedStatus}
+            >
               <MenuItem value="all">All</MenuItem>
               <MenuItem value="ready">Ready</MenuItem>
               <MenuItem value="error">Error</MenuItem>
@@ -129,8 +133,12 @@ const MediaList: React.FC = () => {
             </Select>
           </FormControl>
           <FormControl variant="standard" sx={{ width: '20%' }}>
-            <InputLabel>Language</InputLabel>
-            <Select onChange={handleLanguageSelector} value={selectedLanguage}>
+            <InputLabel id="language-filter">Language</InputLabel>
+            <Select
+              labelId="language-filter"
+              onChange={handleLanguageSelector}
+              value={selectedLanguage}
+            >
               <MenuItem value="all">All</MenuItem>
               {languages.length &&
                 languages.map((language) => (
