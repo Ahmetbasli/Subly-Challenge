@@ -101,5 +101,5 @@
     "skipLibCheck": true,
     "jsx": "react-jsx" /* Skip type checking all .d.ts files. */
   },
-  "include": ["./src/**/*.ts"]
+  "include": ["./src/**/*.ts", "src/components/Header/__test__/Header.test.tsx"]
 }
