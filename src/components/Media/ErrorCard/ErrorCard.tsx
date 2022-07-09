@@ -45,7 +45,11 @@ const ErrorCard: React.FC<Props> = ({ medium }) => {
                 }}
               />
             </Box>
-            <Typography color="text.secondary" gutterBottom>
+            <Typography
+              color="text.secondary"
+              gutterBottom
+              data-testid="error-message"
+            >
               An error occured while processing your file. Delete file to try
               again, and report issues if the problem persists.
             </Typography>
