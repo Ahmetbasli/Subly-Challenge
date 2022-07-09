@@ -67,6 +67,7 @@ const ReadyCard: React.FC<Props> = ({ medium }) => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         className={classes.card}
+        data-testid="medium-image"
       >
         {/* Language chip placed on a card image */}
         <Grid
@@ -117,7 +118,11 @@ const ReadyCard: React.FC<Props> = ({ medium }) => {
           <Typography gutterBottom variant="h6" component="div">
             {medium.name}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            data-testid="last-edited"
+          >
             Edited {''}
             {formatDistanceToNow(
               new Date(format(parseISO(medium.updatedAt), 'yyyy MM dd')),
