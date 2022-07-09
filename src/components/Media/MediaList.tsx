@@ -91,6 +91,7 @@ const MediaList: React.FC = () => {
     // Filter array of remaining mediums by chosen language
     const secondFilteredMediums = filterMediumsByLanguage(firstFilteredMediums)
     setFilteredMediums(secondFilteredMediums)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mediums, selectedStatus, selectedLanguage])
 
   // Filter mediums according to chosen status
