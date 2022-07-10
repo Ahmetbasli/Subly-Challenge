@@ -11,3 +11,8 @@ export interface Media {
 export interface MediaData {
   media: Media[]
 }
+
+export interface MediaContextType {
+  mediums: Media[]
+  saveMedia: (mediums: Media[]) => void
+}
