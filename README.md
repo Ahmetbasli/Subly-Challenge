@@ -106,7 +106,7 @@ yarn test
 ### Convert Language's code 
 - About package: Used iso-639-1 to convert language codes held by each media as the package was appeared at the top of google search and has been constantly updated and maintained. Also it worked without a probalem when tested using codesandbox. 
 - Implementation: Imported ISO6391 from iso-639-1 and passed each language(e.g.,'en') code to its 'fetName' function to get coverted language string
-- Thing I couldn't do: one language code, 'cz', is not successuflly converted into string using the package. Though searched another package, couldn't find better package with frequent update. This needs to be fixed in the future.
+- What I couldn't do: one language code, 'cz', is not successuflly converted into string using the package. Though searched another package, couldn't find better package with frequent update. This needs to be fixed in the future.
 
 ```
 // 'language' below stands for individual language code (e.g., 'en')
@@ -144,7 +144,7 @@ The below are all the tests implemented.
 #### Render correct options when a filter is opened
 - Status filter
 - Language filter
-### Thing I couldn't do
+#### What I couldn't do
 - Testing last edited date was not successful though tried the following methods. I speculat that the date is somehow not recognised as it's formated using a package. 
 ```
 // Allocate test id to the Typography component that wrap the text and test using the id
