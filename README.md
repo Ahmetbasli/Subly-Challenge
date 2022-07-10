@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Subly Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
 
-## Available Scripts
+https://user-images.githubusercontent.com/93969412/178151929-eef42a92-a90d-4b56-8295-9ba23ab7e6b8.mov
 
-In the project directory, you can run:
+## 📖 How to use
+This is a page that lists media data retrieved from API endpoint. 
+You can choose which mediums to display using the dropdowns placed on the top left of the page. Both dropdowns work in tandem ー　if you select 'Ready' in the status dropdown and 'Dutch' in the language dropdown, the list shows only one medium that meets both of these conditions. 
+Also once hovering over the ready medium, you can see edit and delete icons.
+The page has been made user-friendly: it shows a circular progress animation on while media is being retrieved; and it is perfectly responsive to different screen sizes.
 
-### `npm start`
+### Visit link
+https://subly-challenge.netlify.app/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Installation
+1. Clone the project
+```
+git clone 
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 💻 Stack
+### Main Frameworks
+- React
+- Typescript
+- Material-UI
+### Libraries
+- React-testing-library & Jest
+- Axios
+- Mock Service Worker
+- date-fns
+- iso-639-1 
 
-### `npm test`
+## 💪 What I worked on
+explain your decisions and any other useful information.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚧 Roadmap
+If you have ideas for releases in the future, it is a good idea to list them in the README.
 
-### `npm run build`
+## 🧑 Author
+Miho Inagaki
+Website: https://mihoinagaki.com/
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
