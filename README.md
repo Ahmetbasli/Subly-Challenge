@@ -121,12 +121,37 @@ yarn test
 6. In the media list, an unfiltered media array was mapped into a list. Now, replaced it with the filtered mediums array. 
 
 ### Test
-
-
-
-## 🚧 Roadmap
-
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+Used react-testing-library and jest as it's highly compatible to React project compared to other testing libraries. Also, used mock server worker to mock the API transaction.
+As the project uses lots of components, unit and integration tests seemed more suitable than other types of tests. Test files were placed in each component so new tests can be easily added according to changes in corresponding components in the future. 
+The below are all the tests implemented. 
+#### Render media data with all different types fetched using API call
+- Title 
+#### Render a medium with ready status 
+- Title 
+- Cover image 
+- Language number 
+#### Render a medium with error status
+- Error message 
+- Status
+#### Render a medium with transcribing status
+- Title 
+- Cover image 
+- Loading bar 
+- Status
+####  Render hover state UI for a medium with ready status
+- Edit button on top of the cover image
+- Language number
+#### Render correct options when a filter is opened
+- Status filter
+- Language filter
+### Thing I couldn't do
+- Testing last edited date was not successful though tried the following methods. I speculat that the date is somehow not recognised as it's formated using a package. 
+```
+// Allocate test id to the Typography component that wrap the text and test using the id
+expect(screen.getByTestId('last-edited')).toBeInTheDocument()
+// Test using the text 
+expect(screen.getByText('Edited about 1 year ago')).toBeInTheDocument()
+```
 
 ## 🧑 Author
 
