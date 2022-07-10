@@ -27,10 +27,10 @@ const TranscribingCard: React.FC<Props> = ({ medium }) => {
         />
       </Box>
       <CardContent>
-        <Typography gutterBottom variant="h6" component="div">
+        <Typography gutterBottom variant="h3" component="div">
           {medium.name}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body1" color="text.secondary">
           Transcribing
         </Typography>
       </CardContent>

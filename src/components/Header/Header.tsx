@@ -8,7 +8,7 @@ const Header: React.FC = () => {
     <>
       <AppBar>
         <Toolbar>
-          <Typography variant="h5" component="h1">
+          <Typography variant="h1" component="h1">
             Subly
           </Typography>
         </Toolbar>

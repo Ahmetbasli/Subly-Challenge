@@ -13,14 +13,16 @@ const useStyles = makeStyles(() => ({
   mainSection: {
     backgroundColor: '#ef9a9a',
     width: '100%',
+    paddingTop: '20px',
+    paddingRight: '16px',
+    paddingLeft: '16px',
+    paddingBottom: '12px',
   },
   errorMessage: {
     display: 'flex',
-    paddingTop: '20px',
-    paddingBottom: '10px',
+    paddingBottom: '8px',
   },
   buttons: {
-    paddingBottom: '10px',
     display: 'flex',
     justifyContent: 'flex-end',
   },
@@ -29,8 +31,8 @@ const useStyles = makeStyles(() => ({
 const ErrorCard: React.FC<Props> = ({ medium }) => {
   const classes = useStyles()
   return (
-    <Card sx={{ p: 0, '&:last-child': { pb: 0 } }}>
-      <CardContent>
+    <Card>
+      <CardContent sx={{ p: 0 }}>
         {/* Card's main error message and buttons */}
         <Box className={classes.mainSection}>
           <Box className={classes.errorMessage}>
@@ -45,11 +47,7 @@ const ErrorCard: React.FC<Props> = ({ medium }) => {
                 }}
               />
             </Box>
-            <Typography
-              color="text.secondary"
-              gutterBottom
-              data-testid="error-message"
-            >
+            <Typography color="text.secondary" data-testid="error-message">
               An error occured while processing your file. Delete file to try
               again, and report issues if the problem persists.
             </Typography>
@@ -64,12 +62,14 @@ const ErrorCard: React.FC<Props> = ({ medium }) => {
           </Box>
         </Box>
         {/* Card's information */}
-        <Typography gutterBottom variant="h6" component="div">
-          {medium.name}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Error in processing
-        </Typography>
+        <Box sx={{ p: '16px 16px 0 22px ' }}>
+          <Typography gutterBottom variant="h3" component="div">
+            {medium.name}
+          </Typography>
+          <Typography variant="body1" color="text.secondary">
+            Error in processing
+          </Typography>
+        </Box>
       </CardContent>
     </Card>
   )

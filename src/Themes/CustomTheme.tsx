@@ -1,8 +1,48 @@
 import { createTheme } from '@mui/material/styles'
 const CustomTheme = createTheme({
-  typography: {
-    button: {
-      textTransform: 'none',
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: { textTransform: 'none' },
+      },
+    },
+    MuiTypography: {
+      variants: [
+        {
+          props: {
+            variant: 'h1',
+          },
+          style: {
+            fontSize: 24,
+            fontWeight: 'bold',
+          },
+        },
+        {
+          props: {
+            variant: 'h3',
+          },
+          style: {
+            fontSize: 18,
+            fontWeight: 'bold',
+          },
+        },
+        {
+          props: {
+            variant: 'body1',
+          },
+          style: {
+            fontSize: 14,
+          },
+        },
+        {
+          props: {
+            variant: 'body2',
+          },
+          style: {
+            fontSize: 12,
+          },
+        },
+      ],
     },
   },
   palette: {

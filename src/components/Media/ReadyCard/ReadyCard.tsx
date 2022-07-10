@@ -32,7 +32,6 @@ const useStyles = makeStyles({
     marginLeft: '10px',
   },
   translationIconBox: {
-    background: '#8a50f7',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -77,7 +76,12 @@ const ReadyCard: React.FC<Props> = ({ medium }) => {
             width: '110px',
           }}
         >
-          <Grid item xs={3} className={classes.translationIconBox}>
+          <Grid
+            item
+            xs={3}
+            className={classes.translationIconBox}
+            sx={{ background: '#8a50f7' }}
+          >
             <TranslateIcon
               className={classes.translationIcon}
               sx={{
@@ -87,7 +91,7 @@ const ReadyCard: React.FC<Props> = ({ medium }) => {
             />
           </Grid>
           <Grid item xs={9} className={classes.languageText}>
-            <Typography variant="caption" sx={{ color: '#5e5e5e', p: '4px' }}>
+            <Typography variant="body2" color="secondary" sx={{ p: '4px' }}>
               {medium.languages.length >= 2
                 ? `${medium.languages.length} languages`
                 : `1 language`}
@@ -115,7 +119,7 @@ const ReadyCard: React.FC<Props> = ({ medium }) => {
         )}
         {/* card's information */}
         <CardContent>
-          <Typography gutterBottom variant="h6" component="div">
+          <Typography gutterBottom variant="h3" component="div">
             {medium.name}
           </Typography>
           <Typography
