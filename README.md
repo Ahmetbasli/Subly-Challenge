@@ -82,7 +82,7 @@ yarn test
 - Global context: Expecting media data would be used in different pages and components in the future, and avoid passing some props through many components, introduced global state manamagement using React's Context.  
 - Independent function for fetching API data: Extracted logic to fetch API data and prepared an independent function. This 'fetchData' function can be called anywhere in the project and used for any data fetching in the future. 
 - Store types in independent file: Prepared a file and stored all typescript types in the file so these types can be imported and used anywhere in the project without creating the same interface again and again.
-- Dynamic language dropdown options: 
+- Dynamic language dropdown options: As languages used in video are constanly added or removed by users, the dropdown options have to be dynamic. To achieve this, prepared a set of functions executed whenever there's some change in the state of media list using useEffect hook. Inside the useEffect, made an array with all the languages used in a user's video and then store the array in language state. Finally, displayed all the elements of the array as the language dropdown options using map method.
 
 ### Readability
 - Added prettier setting to remove double quotation and semicolon to package.json
