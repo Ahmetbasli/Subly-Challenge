@@ -1,6 +1,7 @@
 # Subly Challenge
 
 This is a page that lists all the media uploaded by a Subly user. 
+
 https://user-images.githubusercontent.com/93969412/178151929-eef42a92-a90d-4b56-8295-9ba23ab7e6b8.mov
 
 ## 📖 How to use
