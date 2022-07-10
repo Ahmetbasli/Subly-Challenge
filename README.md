@@ -68,7 +68,7 @@ yarn test
 ## 💪 What I worked on
 
 ### Project Mangement
-- Before jumping into coding, made a Kanban and issues that show all the required tasks for the challenge not to miss any of them 
+- Before jumping into coding, made a Kanban (https://github.com/mihomihouk/Subly-Challenge/projects/1?query=is%3Aopen+sort%3Aupdated-desc) and issues that show all the required tasks for the challenge not to miss any of them 
 - Visited the Kanban before and after adding new UI and functions and marked checkboxes for finished tasks
 - Added new issues along the way
 
@@ -106,13 +106,19 @@ yarn test
 ### Convert Language's code 
 - About package: Used iso-639-1 to convert language codes held by each media as the package was appeared at the top of google search and has been constantly updated and maintained. Also it worked without a probalem when tested using codesandbox. 
 - Implementation: Imported ISO6391 from iso-639-1 and passed each language(e.g.,'en') code to its 'fetName' function to get coverted language string
+- Thing I couldn't do: one language code, 'cz', is not successuflly converted into string using the package. Though searched another package, couldn't find better package with frequent update. This needs to be fixed in the future.
 
 ```
 // 'language' below stands for individual language code (e.g., 'en')
 {ISO6391.getName(language)} // 'English'
 ```
 ### Filter
-
+1. Prepared states for both status and language dropdown
+2. Prepared two separate functions that returns a filtered array according to a selected language or a selected status.
+3. Prepared a useEffect triggered when there's a change in status and/or language states
+4. Called the prepared functions within the useEffect by passing a retrieved array of mediums to one of the functions and then a returned array from the first function to the another function as a argument. 
+5. Preapared a state to store an array of filtered mediums and updated the state with the array returned after the process 4. 
+6. In the media list, an unfiltered media array was mapped into a list. Now, replaced it with the filtered mediums array. 
 
 ### Test
 
