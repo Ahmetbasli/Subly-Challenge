@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { fetchData } from '../../lib/fetchData'
 import { Media } from '../../types/types'
 import ISO6391 from 'iso-639-1'
+import { MediaContext } from '../../contexts/contexts'
 
 //styles
 import {
@@ -13,6 +14,7 @@ import {
   Select,
   MenuItem,
   SelectChangeEvent,
+  Typography,
 } from '@mui/material'
 
 //components
@@ -22,11 +24,11 @@ import TranscribingCard from './TranscribingCard/TranscribingCard'
 
 const MediaList: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false)
-  const [mediums, setMediums] = useState<Media[]>([])
   const [languages, setLanguages] = useState<string[]>([])
-  const [filteredMediums, setFilteredMediums] = useState<Media[]>(mediums)
   const [selectedStatus, setSelectedStatus] = useState<string>('all')
   const [selectedLanguage, setSelectedLanguage] = useState<string>('all')
+  const { mediums, saveMedia } = useContext(MediaContext)
+  const [filteredMediums, setFilteredMediums] = useState<Media[]>(mediums)
 
   // Fetch Media data when first rendered
   useEffect(() => {
@@ -35,9 +37,10 @@ const MediaList: React.FC = () => {
       'https://run.mocky.io/v3/a811c0e9-adae-4554-9694-173aa23bc38b'
     ).then((data) => {
       const fetchedMedia = data.media
-      setMediums(fetchedMedia)
+      saveMedia(fetchedMedia)
       setIsLoading(false)
     })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // Renew the language state(array of languages of all the mediums without overlaps)
@@ -144,25 +147,25 @@ const MediaList: React.FC = () => {
             >
               <CircularProgress size="80px" />
             </Box>
+          ) : filteredMediums.length >= 1 ? (
+            <Grid container spacing={3}>
+              {filteredMediums.map((medium) => (
+                <Grid item xs={12} sm={6} md={4} lg={3} key={medium.id}>
+                  {(() => {
+                    switch (medium.status) {
+                      case 'error':
+                        return <ErrorCard medium={medium} />
+                      case 'transcribing':
+                        return <TranscribingCard medium={medium} />
+                      default:
+                        return <ReadyCard medium={medium} />
+                    }
+                  })()}
+                </Grid>
+              ))}
+            </Grid>
           ) : (
-            filteredMediums.length && (
-              <Grid container spacing={3}>
-                {filteredMediums.map((medium) => (
-                  <Grid item xs={12} sm={6} md={4} lg={3} key={medium.id}>
-                    {(() => {
-                      switch (medium.status) {
-                        case 'error':
-                          return <ErrorCard medium={medium} />
-                        case 'transcribing':
-                          return <TranscribingCard medium={medium} />
-                        default:
-                          return <ReadyCard medium={medium} />
-                      }
-                    })()}
-                  </Grid>
-                ))}
-              </Grid>
-            )
+            <Typography variant="body1">No video</Typography>
           )}
         </Box>
       </Box>
