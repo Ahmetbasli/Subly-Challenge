@@ -161,7 +161,7 @@ const MediaList: React.FC = () => {
             filteredMediums.length && (
               <Grid container spacing={3}>
                 {filteredMediums.map((medium) => (
-                  <Grid item xs={6} md={4} lg={3} key={medium.id}>
+                  <Grid item xs={12} sm={6} md={4} lg={3} key={medium.id}>
                     {(() => {
                       switch (medium.status) {
                         case 'error':
