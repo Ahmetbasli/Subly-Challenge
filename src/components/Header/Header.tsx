@@ -1,6 +1,6 @@
 import React from 'react'
 
-//style
+//styles
 import { AppBar, Toolbar, Typography } from '@mui/material'
 
 const Header: React.FC = () => {
@@ -8,9 +8,7 @@ const Header: React.FC = () => {
     <>
       <AppBar>
         <Toolbar>
-          <Typography variant="h1" component="h1">
-            Subly
-          </Typography>
+          <Typography variant="h1">Subly</Typography>
         </Toolbar>
       </AppBar>
     </>

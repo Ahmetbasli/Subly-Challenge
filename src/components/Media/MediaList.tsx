@@ -3,7 +3,7 @@ import { fetchData } from '../../lib/fetchData'
 import { Media } from '../../types/types'
 import ISO6391 from 'iso-639-1'
 
-//style
+//styles
 import {
   CircularProgress,
   Box,
@@ -14,29 +14,11 @@ import {
   MenuItem,
   SelectChangeEvent,
 } from '@mui/material'
-import { makeStyles } from '@mui/styles'
 
-//component
+//components
 import ErrorCard from './ErrorCard/ErrorCard'
 import ReadyCard from './ReadyCard/ReadyCard'
 import TranscribingCard from './TranscribingCard/TranscribingCard'
-
-const useStyles = makeStyles({
-  container: {
-    bgcolor: '#cfe8fc',
-    height: '100vh',
-  },
-  filters: {
-    paddingTop: '100px',
-    paddingBottom: '20px',
-  },
-  loading: {
-    height: '600px',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-})
 
 const MediaList: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false)
@@ -45,8 +27,6 @@ const MediaList: React.FC = () => {
   const [filteredMediums, setFilteredMediums] = useState<Media[]>(mediums)
   const [selectedStatus, setSelectedStatus] = useState<string>('all')
   const [selectedLanguage, setSelectedLanguage] = useState<string>('all')
-
-  const classes = useStyles()
 
   // Fetch Media data when first rendered
   useEffect(() => {
@@ -117,9 +97,9 @@ const MediaList: React.FC = () => {
 
   return (
     <>
-      <Box className={classes.container}>
+      <Box height="100vh">
         {/* Filters */}
-        <Box className={classes.filters}>
+        <Box sx={{ pt: '100px', pb: '20px' }}>
           <FormControl variant="standard" sx={{ width: '20%', mr: '10px' }}>
             <InputLabel id="status-filter">Status</InputLabel>
             <Select
@@ -154,7 +134,14 @@ const MediaList: React.FC = () => {
         {/* Media list */}
         <Box>
           {isLoading ? (
-            <Box className={classes.loading}>
+            <Box
+              height="600px"
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
               <CircularProgress size="80px" />
             </Box>
           ) : (

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Media } from '../../../types/types'
 
-//style
+//styles
 import { Box, Card, CardContent, CardMedia, Typography } from '@mui/material'
 
-//component
+//components
 import TranscribingGlassCard from './TranscribingGlassCard'
 
 interface Props {
@@ -27,7 +27,7 @@ const TranscribingCard: React.FC<Props> = ({ medium }) => {
         />
       </Box>
       <CardContent>
-        <Typography gutterBottom variant="h3" component="div">
+        <Typography gutterBottom variant="h3">
           {medium.name}
         </Typography>
         <Typography variant="body1" color="text.secondary">

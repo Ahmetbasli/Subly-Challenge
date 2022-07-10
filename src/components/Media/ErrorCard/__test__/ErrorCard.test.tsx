@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
-//component
+//components
 import ErrorCard from '../ErrorCard'
 
 // Define mock media data

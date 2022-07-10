@@ -1,4 +1,4 @@
-//component
+//components
 import MediaList from './components/Media/MediaList'
 
 //styles

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
-//component
+//components
 import TranscribingCard from '../TranscribingCard'
 
 // Define mock media data

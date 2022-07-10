@@ -1,41 +1,27 @@
 import React from 'react'
 import { Media } from '../../../types/types'
 
-//style
+//styles
 import { Box, Button, Card, CardContent, Typography } from '@mui/material'
-import { makeStyles } from '@mui/styles'
-
 interface Props {
   medium: Media
 }
 
-const useStyles = makeStyles(() => ({
-  mainSection: {
-    backgroundColor: '#ef9a9a',
-    width: '100%',
-    paddingTop: '20px',
-    paddingRight: '16px',
-    paddingLeft: '16px',
-    paddingBottom: '12px',
-  },
-  errorMessage: {
-    display: 'flex',
-    paddingBottom: '8px',
-  },
-  buttons: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-  },
-}))
-
 const ErrorCard: React.FC<Props> = ({ medium }) => {
-  const classes = useStyles()
   return (
     <Card>
       <CardContent sx={{ p: 0 }}>
         {/* Card's main error message and buttons */}
-        <Box className={classes.mainSection}>
-          <Box className={classes.errorMessage}>
+        <Box
+          width="100%"
+          sx={{
+            backgroundColor: '#ef9a9a',
+            pt: '20px',
+            paddingX: '16px',
+            pb: '12px',
+          }}
+        >
+          <Box sx={{ display: 'flex', pb: '8px' }}>
             <Box>
               <img
                 src="/warning.png"
@@ -52,7 +38,7 @@ const ErrorCard: React.FC<Props> = ({ medium }) => {
               again, and report issues if the problem persists.
             </Typography>
           </Box>
-          <Box className={classes.buttons}>
+          <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
             <Button variant="outlined" color="secondary">
               Delete file
             </Button>
@@ -63,7 +49,7 @@ const ErrorCard: React.FC<Props> = ({ medium }) => {
         </Box>
         {/* Card's information */}
         <Box sx={{ p: '16px 16px 0 22px ' }}>
-          <Typography gutterBottom variant="h3" component="div">
+          <Typography gutterBottom variant="h3">
             {medium.name}
           </Typography>
           <Typography variant="body1" color="text.secondary">

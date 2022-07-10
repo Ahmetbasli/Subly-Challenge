@@ -4,7 +4,7 @@ import { rest } from 'msw'
 import { setupServer } from 'msw/node'
 import userEvent from '@testing-library/user-event'
 
-//component
+//components
 import MediaList from '../MediaList'
 
 // Define mock API response with dummy data

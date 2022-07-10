@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { formatDistanceToNow, format, parseISO } from 'date-fns'
 
-//style
+//styles
 import {
   Box,
   Card,
@@ -10,9 +10,8 @@ import {
   Grid,
   Typography,
 } from '@mui/material'
-import { makeStyles } from '@mui/styles'
 import TranslateIcon from '@mui/icons-material/Translate'
-//component
+//components
 import { Media } from '../../../types/types'
 import HoverGlassCard from './HoverGlassCard'
 
@@ -20,34 +19,7 @@ interface Props {
   medium: Media
 }
 
-const useStyles = makeStyles({
-  card: {
-    position: 'relative',
-    zIndex: '1',
-  },
-  languageChip: {
-    position: 'absolute',
-    top: '10%',
-    zIndex: '2',
-    marginLeft: '10px',
-  },
-  translationIconBox: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: '3px 0 0 3px',
-  },
-  translationIcon: {
-    color: 'white',
-  },
-  languageText: {
-    background: 'white',
-    borderRadius: '0 3px 3px 0',
-  },
-})
-
 const ReadyCard: React.FC<Props> = ({ medium }) => {
-  const classes = useStyles()
   // state to apply different UI when hovering over a ready card
   const [isHover, setIsHover] = useState<boolean>(false)
 
@@ -65,32 +37,44 @@ const ReadyCard: React.FC<Props> = ({ medium }) => {
       <Card
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className={classes.card}
+        sx={{ position: 'relative', zIndex: '1' }}
         data-testid="medium-image"
       >
         {/* Language chip placed on a card image */}
         <Grid
           container
-          className={classes.languageChip}
+          width="110px"
           sx={{
-            width: '110px',
+            position: 'absolute',
+            top: '10%',
+            zIndex: '2',
+            ml: '10px',
           }}
         >
           <Grid
             item
             xs={3}
-            className={classes.translationIconBox}
-            sx={{ background: '#8a50f7' }}
+            sx={{
+              backgroundColor: 'primary.main',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              borderRadius: '3px 0 0 3px',
+            }}
           >
             <TranslateIcon
-              className={classes.translationIcon}
               sx={{
                 width: '15px',
                 height: '15px',
+                color: 'white',
               }}
             />
           </Grid>
-          <Grid item xs={9} className={classes.languageText}>
+          <Grid
+            item
+            xs={9}
+            sx={{ background: 'white', borderRadius: '0 3px 3px 0' }}
+          >
             <Typography variant="body2" color="secondary" sx={{ p: '4px' }}>
               {medium.languages.length >= 2
                 ? `${medium.languages.length} languages`
@@ -119,7 +103,7 @@ const ReadyCard: React.FC<Props> = ({ medium }) => {
         )}
         {/* card's information */}
         <CardContent>
-          <Typography gutterBottom variant="h3" component="div">
+          <Typography gutterBottom variant="h3">
             {medium.name}
           </Typography>
           <Typography
